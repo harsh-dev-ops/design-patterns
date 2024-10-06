@@ -1,3 +1,4 @@
+from abc import ABC, abstractmethod
 from enum import Enum
 import types
 from typing import Any
@@ -49,35 +50,12 @@ class Specification:
     def is_satisfied(self, item):
         pass
 
-    # and operator makes life easier
     def __and__(self, other):
-        return AndSpecification(self, other)
-    
-    # def __bool__(self):
-    #     return NotSpecification(self)
-    
-
-class Filter:
-    def filter(self, items, spec):
         pass
-
-
-class ColorSpecification(Specification):
-    def __init__(self, color):
-        self.color = color
-
-    def is_satisfied(self, item):
-        return item.color == self.color
-
-
-class SizeSpecification(Specification):
-    def __init__(self, size):
-        self.size = size
-
-    def is_satisfied(self, item):
-        return item.size == self.size
     
-
+    def __or__(self, other):
+        pass
+    
 class AndSpecification(Specification):
     def __init__(self, spec1, spec2):
         self.spec2 = spec2
@@ -94,16 +72,41 @@ class OrSpecification(Specification):
         
     def is_satisfied(self, item):
         return self.spec1.is_satisfied(item) or self.spec2.is_satisfied(item)
-            
-            
-# class NotSpecification(Specification):
-#     def __init__(self, spec):
-#         self.spec = spec
-    
-#     def is_satisfied(self, item):
-#         return not self.spec.is_satisfied(item)
     
 
+class Filter:
+    def filter(self, items, spec):
+        pass
+
+
+class ColorSpecification(Specification):
+    def __init__(self, color):
+        self.color = color
+
+    def is_satisfied(self, item):
+        return item.color == self.color
+    
+    def __and__(self, other):
+        return AndSpecification(self, other)
+    
+    def __or__(self, other):
+        return OrSpecification(self, other)
+
+
+class SizeSpecification(Specification):
+    def __init__(self, size):
+        self.size = size
+
+    def is_satisfied(self, item):
+        return item.size == self.size
+    
+    def __and__(self, other):
+        return AndSpecification(self, other)
+    
+    def __or__(self, other):
+        return OrSpecification(self, other)
+    
+    
 class BetterFilter(Filter):
     def filter(self, items, spec):
         for item in items:
@@ -142,7 +145,7 @@ for p in bf.filter(products, largeSize):
     print(p.name,  p.size.name)
     
 print('\nSize: Large and Color: Blue')
-blueColor_largeSize = SizeSpecification(Size.LARGE) and ColorSpecification(Color.BLUE)
+blueColor_largeSize = ColorSpecification(Color.BLUE) and SizeSpecification(Size.LARGE)
 for p in bf.filter(products, blueColor_largeSize):
     print(p.name, p.size.name, p.color.name)
     
