@@ -121,18 +121,19 @@ house = Product('House', Color.BLUE, Size.LARGE)
 
 products = [apple, tree, house]     
 
-########################### Old Filter ###############################
-print('Old Method:')     
+#------------------------ Old Filter -------------------------------#
+print('Old Method:\n')     
 pf = ProductFilter()
 for p in pf.filter_by_color(products, Color.GREEN):
     print(p.name, p.color.name, p.size.name)
     
-######################################################################
 
-############################ New Filter ##############################
+
+#------------------------ New Filter -------------------------------#
 bf = BetterFilter()
 
-print('\nNew Method:')
+print("-"*50)
+print('\nNew Method:\n')
 print('Green Color Objects:')
 green = ColorSpecification(Color.GREEN)
 for p in bf.filter(products, green):
@@ -152,5 +153,3 @@ print('\nSize: Large or Color:Green')
 color_size = ColorSpecification(Color.GREEN) or SizeSpecification(Size.LARGE)
 for p in bf.filter(products, color_size):
     print(p.name, p.color.name, p.size.name)
-    
-######################################################################
