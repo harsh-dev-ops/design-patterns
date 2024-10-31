@@ -27,12 +27,12 @@ class Rectangle(list):
 
 
 class LineToPointAdapter(list):
-    count = 0
+    _count = 0
 
     def __init__(self, line):
         super().__init__()
-        self.count += 1
-        print(f"{self.count}: Generating points for line "
+        self._count += 1
+        print(f"{self._count}: Generating points for line "
               f"({line.start.x}, {line.start.y}) -> "
               f"({line.end.x}, {line.end.y})")
 
