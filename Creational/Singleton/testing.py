@@ -32,7 +32,7 @@ class SingletonRecordFinder:
 
 
 class ConfigurableRecordFinder:
-    def __init__(self, db: Database):
+    def __init__(self, db):
         self.db = db
 
     def total_population(self, cities):
