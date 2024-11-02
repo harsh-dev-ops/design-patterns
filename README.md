@@ -2,18 +2,19 @@
 
 ## Table of Contents
 - [Introduction](#introduction)
-- [Design Patterns](#design-patterns)
-  - [What are Design Patterns?](#what-are-design-patterns)
-  - [Types of Design Patterns](#types-of-design-patterns)
-    - [Creational Patterns](#creational-patterns)
-    - [Structural Patterns](#structural-patterns)
-    - [Behavioral Patterns](#behavioral-patterns)
 - [SOLID Principles](#solid-principles)
   - [Single Responsibility Principle (SRP)](#single-responsibility-principle-srp)
   - [Open/Closed Principle (OCP)](#openclosed-principle-ocp)
   - [Liskov Substitution Principle (LSP)](#liskov-substitution-principle-lsp)
   - [Interface Segregation Principle (ISP)](#interface-segregation-principle-isp)
   - [Dependency Inversion Principle (DIP)](#dependency-inversion-principle-dip)
+- [Design Patterns](#design-patterns)
+  - [What are Design Patterns?](#what-are-design-patterns)
+  - [Types of Design Patterns](#types-of-design-patterns)
+    - [Creational Patterns](#creational-patterns)
+    - [Structural Patterns](#structural-patterns)
+    - [Behavioral Patterns](#behavioral-patterns)
+
   
 ## Introduction
 In software development, maintaining a clean and manageable codebase is essential for long-term success. Design patterns and SOLID principles provide guidelines that can help achieve these goals. This document outlines the fundamentals of both concepts.
