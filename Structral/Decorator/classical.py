@@ -41,7 +41,7 @@ class TransparentShape(Shape):
     def __init__(self, colored_shape, transparency):
 
         if isinstance(colored_shape, TransparentShape):
-            raise Exception('Cannot apply ColoredDecorator twice')
+            raise Exception('Cannot apply TransparentDecorator twice')
 
         if not isinstance(colored_shape, ColoredShape):
             raise Exception(f'Only Colored Shape supported')
