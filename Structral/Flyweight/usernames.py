@@ -58,6 +58,7 @@ def normal_user_name_combination_count(users: list[User]):
     print(f'Ideal word count: {ideal_word_count}')
     print(f'Real word count: {real_word_count}')
     # print(f'No. of repeated Words: {real_word_count - ideal_word_count}')
+    print(f'Is Ideal word count equal to real word count?')
     print(f'Answer: {real_word_count == ideal_word_count}')
 
 
@@ -70,7 +71,7 @@ def flyweight_user_name_combination_count(users: list[FlyweightUser], all_user_n
     print(f'Ideal word count: {ideal_word_count}')
     print(f'Real word count: {real_word_count}')
     # print(f'No. of repeated Words: {real_word_count - ideal_word_count}')
-    print(f'Is Ideal word count eual to real word count?')
+    print(f'Is Ideal word count equal to real word count?')
     print(f'Answer: {real_word_count == ideal_word_count}')
 
 
