@@ -1,3 +1,7 @@
+---
+marp: false
+---
+
 # Chain of responsiblity
 Sequence of handlers processing an event one after another
 
