@@ -22,3 +22,8 @@ Sequence of handlers processing an event one after another
 
 ## Defination
 A chain of components who all get a chance to process a command or query, optionally having default processing implementation and ability to terminate the processing chain.
+
+## Summary
+- Chain of responsibility can be implemented as a chain or reference or a centralized construct.
+- Enlish objects in the chain, possibility controlling their order.
+- Object Removal from chain (e.g. ```__exit__()```)
