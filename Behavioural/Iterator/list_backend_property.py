@@ -39,4 +39,10 @@ class Creature:
         return len(self.stats)
 
     def __str__(self):
-        return f"S {self.stats[self._strength]}/A  {self.stats[self._agility]}/I {self.stats[self._intelligence]}"
+        return f"(Strength:{self.strength} / Attack:{self.agility} / Intelligence:{self.intelligence})"
+
+
+if __name__ == '__main__':
+    creature = Creature()
+
+    print(creature)
