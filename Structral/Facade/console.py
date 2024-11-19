@@ -23,7 +23,7 @@ class ViewPort:
         return self.buffer[self.offset + index]
 
     def append(self, text):
-        self.buffer += text
+        self.buffer.write(text)
 
 
 class Console:
@@ -34,7 +34,7 @@ class Console:
         self.viewports = [self.current_viewport]
 
     def write(self, text):
-        self.current_viewport.buffer.write(text)
+        self.current_viewport.append(text)
 
     def get_char_at(self, index):
         return self.current_viewport.get_char_at(index)
