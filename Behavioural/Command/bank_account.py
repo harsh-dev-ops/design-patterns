@@ -39,7 +39,10 @@ class BankAccountCommand(Command):
         DEPOSIT = 0
         WITHDRAW = 1
 
-    def __init__(self, account: BankAccount, action, amount: int | float) -> None:
+    def __init__(self,
+                 account: BankAccount,
+                 action,
+                 amount: int | float):
         self.account = account
         self.action:  BankAccountCommand.Action = action
         self.amount = amount
