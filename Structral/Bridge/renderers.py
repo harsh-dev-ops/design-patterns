@@ -75,7 +75,7 @@ class Circle(Shape):
 
 
 class Square(Shape):
-    def __init__(self, renderer, side):
+    def __init__(self, renderer: SquareRenderer, side):
         super().__init__(renderer)
         self.side = side
 
